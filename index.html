@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Bài tập JS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-3">
+                <div class="border m-3 p-3 h-100">
+                    <h2 class="text-capitalize">
+                        tính tiền lương nhân viên
+                    </h2>
+                    <form onsubmit="tinhTienLuong(); return false;">
+                        <div class="form-group">
+                            <label for="soNgayLam" class="text-capitalize">nhập số ngày lương:</label>
+                            <input type="number" class="form-control" id="soNgayLam">
+                        </div>
+                        <button class="btn btn-primary text-capitalize">tính</button>
+                    </form>
+                    <div id="ketQua"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-3">
+                <div class="border m-3 p-3 h-100">
+                    <h2 class="text-capitalize">
+                        tính giá trị trung bình
+                    </h2>
+                    <form onsubmit="tinhTrungBinh(); return false;">
+                        <label for="num1st">Nhập vào 5 số:</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Số thứ 1</span>
+                            </div>
+                            <input type="number" class="form-control" id="num1st">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Số thứ 2</span>
+                            </div>
+                            <input type="number" class="form-control" id="num2nd">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Số thứ 3</span>
+                            </div>
+                            <input type="number" class="form-control" id="num3rd">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Số thứ 4</span>
+                            </div>
+                            <input type="number" class="form-control"id="num4th"> 
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Số thứ 5</span>
+                            </div>
+                            <input type="number" class="form-control" id="num5th">
+                        </div>
+                        <button class="btn btn-primary text-capitalize">tính</button>
+                    </form>
+                    <div id="ketQua2"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-3">
+                <div class="border m-3 p-3 h-100">
+                    <h2 class="text-capitalize">
+                        quy đổi usd
+                    </h2>
+                    <form onsubmit="quyDoiTien(); return false;">
+                        <div class="form-group">
+                            <label for="soUsd" class="text-capitalize">nhập số ngày usd:</label>
+                            <input type="number" class="form-control" id="soUsd">
+                        </div>
+                        <button class="btn btn-primary text-capitalize">tính</button>
+                    </form>
+                    <div id="ketQua3"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-3">
+                <div class="border m-3 p-3 h-100">
+                    <h2 class="text-capitalize">
+                        tính diện tích, chu vi
+                    </h2>
+                    <form onsubmit="return false;">
+                        <label for="num1st">Nhập vào chiều dài, chiều rộng:</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Chiều dài</span>
+                            </div>
+                            <input type="number" class="form-control" id="chieuDai">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Chiều rộng</span>
+                            </div>
+                            <input type="number" class="form-control" id="chieuRong">
+                        </div>
+                        <button class="btn btn-primary text-capitalize" onclick="tinhDienTich()">tính diện tích</button>
+                        <button class="btn btn-primary text-capitalize" onclick="tinhChuVi()">tính chu vi</button>
+                    </form>
+                    <div id="ketQua4"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-3">
+                <div class="border m-3 p-3 h-100">
+                    <h2 class="text-capitalize">
+                        tính tổng 2 ký số
+                    </h2>
+                    <form onsubmit="tinhTong2So();return false;">
+                        <label for="so2ChuSo">Nhập vào số có 2 chữ số:</label>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="so2ChuSo">
+                            <small class="form-text">Chỉ số có 2 chữ số mới được chấp nhận!</small>
+                        </div>
+                        <button class="btn btn-primary text-capitalize">tính</button>
+                    </form>
+                    <div id="ketQua5"></div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
