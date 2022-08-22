@@ -1,6 +1,4 @@
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
+var formatVND = new Intl.NumberFormat("VN-vn");
 
 // TÍNH TIỀN LƯƠNG
 /*
@@ -34,7 +32,7 @@ function tinhTienLuong() {
     }
     else {
         var tongLuong = soNgayLam * 100000;
-        tongLuong = numberWithCommas(tongLuong);
+        tongLuong = formatVND.format(tongLuong);
         ketQua.className="p-3 my-2 bg-success text-white";
         ketQua.innerHTML = "Lương: " + tongLuong + " vnđ";
     }
@@ -98,7 +96,7 @@ function quyDoiTien() {
     else {
         var vnd = soUsd * 23500;
         ketQua.className="p-3 my-2 bg-success text-white";
-        ketQua.innerHTML = "VNĐ: " + numberWithCommas(vnd) + " vnđ";
+        ketQua.innerHTML = "VNĐ: " + formatVND.format(vnd) + " vnđ";
     }
 }
 
